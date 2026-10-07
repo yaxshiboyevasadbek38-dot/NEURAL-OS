@@ -1,0 +1,910 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>NEURAL OS // Brain Interface</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- BACKGROUND -->
+
+    <div class="stars"></div>
+    <div class="grid"></div>
+    <div class="scanlines"></div>
+
+    <!-- BOOT SCREEN -->
+
+    <section id="bootScreen">
+
+        <div class="boot-box">
+
+            <div class="boot-logo">Ψ</div>
+
+            <h1>NEURAL OS</h1>
+
+            <p>NEURAL COMPUTING ENVIRONMENT</p>
+
+            <div class="boot-terminal" id="bootTerminal"></div>
+
+            <div class="boot-progress">
+                <div id="bootProgress"></div>
+            </div>
+
+            <small>
+                INITIALIZING NEURAL CORE...
+            </small>
+
+        </div>
+
+    </section>
+
+
+    <!-- MAIN SYSTEM -->
+
+    <main id="system">
+
+        <!-- TOP BAR -->
+
+        <header class="topbar">
+
+            <div class="brand">
+
+                <span>Ψ</span>
+
+                NEURAL
+                <b>OS</b>
+
+            </div>
+
+            <div class="system-status">
+
+                <i></i>
+
+                NEURAL LINK ACTIVE
+
+            </div>
+
+            <div class="clock" id="clock">
+                00:00:00
+            </div>
+
+        </header>
+
+
+        <!-- SIDEBAR -->
+
+        <aside class="sidebar">
+
+            <button
+                class="nav active"
+                onclick="openPage('dashboard', this)"
+            >
+                <span>◉</span>
+                CORE
+            </button>
+
+            <button
+                class="nav"
+                onclick="openPage('brain', this)"
+            >
+                <span>🧠</span>
+                BRAIN
+            </button>
+
+            <button
+                class="nav"
+                onclick="openPage('memory', this)"
+            >
+                <span>◈</span>
+                MEMORY
+            </button>
+
+            <button
+                class="nav"
+                onclick="openPage('thoughts', this)"
+            >
+                <span>∞</span>
+                THOUGHTS
+            </button>
+
+            <button
+                class="nav"
+                onclick="openPage('ai', this)"
+            >
+                <span>◇</span>
+                AI CORE
+            </button>
+
+            <button
+                class="nav"
+                onclick="openPage('terminal', this)"
+            >
+                <span>$_</span>
+                TERMINAL
+            </button>
+
+            <div class="sidebar-bottom">
+
+                <button
+                    class="nav"
+                    onclick="toggleSystem()"
+                >
+                    <span>⏻</span>
+                    SYSTEM
+                </button>
+
+            </div>
+
+        </aside>
+
+
+        <!-- CONTENT -->
+
+        <section class="content">
+
+
+            <!-- =====================
+                 DASHBOARD
+            ====================== -->
+
+            <div
+                class="page active"
+                id="dashboard"
+            >
+
+                <div class="page-header">
+
+                    <div>
+
+                        <p class="eyebrow">
+                            NEURAL OPERATING SYSTEM // CORE
+                        </p>
+
+                        <h2>
+                            Welcome to your
+                            <span>mind.</span>
+                        </h2>
+
+                        <p class="description">
+                            Neural activity monitoring system
+                            online. All cognitive systems are
+                            operating within normal parameters.
+                        </p>
+
+                    </div>
+
+                    <div class="connection">
+
+                        <div class="connection-dot"></div>
+
+                        LINK
+                        <strong>98.7%</strong>
+
+                    </div>
+
+                </div>
+
+
+                <!-- CORE -->
+
+                <div class="core-layout">
+
+                    <div class="neural-core">
+
+                        <div class="orbit orbit-one"></div>
+                        <div class="orbit orbit-two"></div>
+                        <div class="orbit orbit-three"></div>
+
+                        <div class="brain-core">
+
+                            <span>Ψ</span>
+
+                            <small>
+                                NEURAL
+                            </small>
+
+                        </div>
+
+                        <div class="node node-1"></div>
+                        <div class="node node-2"></div>
+                        <div class="node node-3"></div>
+                        <div class="node node-4"></div>
+                        <div class="node node-5"></div>
+
+                    </div>
+
+
+                    <!-- CORE DATA -->
+
+                    <div class="core-data">
+
+                        <div class="data-card">
+
+                            <span>
+                                BRAIN ACTIVITY
+                            </span>
+
+                            <strong id="brainActivity">
+                                87.4%
+                            </strong>
+
+                            <div class="mini-bar">
+                                <div id="activityBar"></div>
+                            </div>
+
+                        </div>
+
+
+                        <div class="data-card">
+
+                            <span>
+                                FOCUS
+                            </span>
+
+                            <strong id="focus">
+                                74%
+                            </strong>
+
+                            <div class="mini-bar purple">
+                                <div id="focusBar"></div>
+                            </div>
+
+                        </div>
+
+
+                        <div class="data-card">
+
+                            <span>
+                                NEURAL LOAD
+                            </span>
+
+                            <strong id="neuralLoad">
+                                42.8%
+                            </strong>
+
+                            <div class="mini-bar green">
+                                <div id="loadBar"></div>
+                            </div>
+
+                        </div>
+
+
+                        <div class="data-card">
+
+                            <span>
+                                SYNAPSES
+                            </span>
+
+                            <strong id="synapses">
+                                14.8B
+                            </strong>
+
+                            <small class="green-text">
+                                +2.4M / SEC
+                            </small>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- BOTTOM GRID -->
+
+                <div class="dashboard-grid">
+
+                    <!-- BRAIN WAVES -->
+
+                    <div class="panel waves-panel">
+
+                        <div class="panel-title">
+
+                            <div>
+
+                                <span>
+                                    LIVE NEURAL WAVES
+                                </span>
+
+                                <small>
+                                    EEG SIMULATION
+                                </small>
+
+                            </div>
+
+                            <b>
+                                LIVE
+                            </b>
+
+                        </div>
+
+                        <canvas
+                            id="waveCanvas"
+                        ></canvas>
+
+                    </div>
+
+
+                    <!-- THOUGHT STREAM -->
+
+                    <div class="panel">
+
+                        <div class="panel-title">
+
+                            <div>
+
+                                <span>
+                                    THOUGHT STREAM
+                                </span>
+
+                                <small>
+                                    COGNITIVE ACTIVITY
+                                </small>
+
+                            </div>
+
+                            <b>
+                                ●
+                            </b>
+
+                        </div>
+
+                        <div
+                            class="thought-stream"
+                            id="thoughtStream"
+                        >
+
+                            <div>
+                                <span>14:42:01</span>
+                                System optimization detected
+                            </div>
+
+                            <div>
+                                <span>14:42:04</span>
+                                Visual processing active
+                            </div>
+
+                            <div>
+                                <span>14:42:07</span>
+                                Memory cluster synchronized
+                            </div>
+
+                            <div>
+                                <span>14:42:11</span>
+                                Neural pathway established
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- QUICK STATS -->
+
+                <div class="quick-stats">
+
+                    <div>
+                        <span>ALPHA</span>
+                        <strong>42.8 Hz</strong>
+                    </div>
+
+                    <div>
+                        <span>BETA</span>
+                        <strong>18.4 Hz</strong>
+                    </div>
+
+                    <div>
+                        <span>THETA</span>
+                        <strong>7.2 Hz</strong>
+                    </div>
+
+                    <div>
+                        <span>GAMMA</span>
+                        <strong>84.1 Hz</strong>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- =====================
+                 BRAIN
+            ====================== -->
+
+            <div
+                class="page"
+                id="brain"
+            >
+
+                <div class="page-header">
+
+                    <div>
+
+                        <p class="eyebrow">
+                            NEURAL ANALYSIS
+                        </p>
+
+                        <h2>
+                            Brain <span>activity.</span>
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <div class="brain-layout">
+
+                    <div class="brain-map">
+
+                        <div class="brain-shape">
+
+                            <div class="brain-glow"></div>
+
+                            <span>Ψ</span>
+
+                        </div>
+
+                        <div class="brain-label label-a">
+                            MEMORY
+                        </div>
+
+                        <div class="brain-label label-b">
+                            LOGIC
+                        </div>
+
+                        <div class="brain-label label-c">
+                            VISION
+                        </div>
+
+                        <div class="brain-label label-d">
+                            CREATIVITY
+                        </div>
+
+                    </div>
+
+
+                    <div class="brain-stats">
+
+                        <div class="stat-row">
+
+                            <span>
+                                MEMORY
+                            </span>
+
+                            <strong>
+                                92%
+                            </strong>
+
+                            <div>
+                                <i style="width:92%"></i>
+                            </div>
+
+                        </div>
+
+
+                        <div class="stat-row">
+
+                            <span>
+                                LOGIC
+                            </span>
+
+                            <strong>
+                                84%
+                            </strong>
+
+                            <div>
+                                <i style="width:84%"></i>
+                            </div>
+
+                        </div>
+
+
+                        <div class="stat-row">
+
+                            <span>
+                                CREATIVITY
+                            </span>
+
+                            <strong>
+                                76%
+                            </strong>
+
+                            <div>
+                                <i style="width:76%"></i>
+                            </div>
+
+                        </div>
+
+
+                        <div class="stat-row">
+
+                            <span>
+                                PROCESSING
+                            </span>
+
+                            <strong>
+                                97%
+                            </strong>
+
+                            <div>
+                                <i style="width:97%"></i>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- =====================
+                 MEMORY
+            ====================== -->
+
+            <div
+                class="page"
+                id="memory"
+            >
+
+                <div class="page-header">
+
+                    <div>
+
+                        <p class="eyebrow">
+                            COGNITIVE STORAGE
+                        </p>
+
+                        <h2>
+                            Memory <span>matrix.</span>
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <div class="memory-grid">
+
+                    <div class="memory-card">
+
+                        <strong>
+                            12.8 TB
+                        </strong>
+
+                        <span>
+                            TOTAL CAPACITY
+                        </span>
+
+                    </div>
+
+                    <div class="memory-card">
+
+                        <strong>
+                            7.4 TB
+                        </strong>
+
+                        <span>
+                            ACTIVE MEMORY
+                        </span>
+
+                    </div>
+
+                    <div class="memory-card">
+
+                        <strong>
+                            2.8M
+                        </strong>
+
+                        <span>
+                            MEMORY NODES
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="memory-list">
+
+                    <div>
+                        <span>◈</span>
+                        Childhood Memories
+                        <small>1.4 TB</small>
+                    </div>
+
+                    <div>
+                        <span>◈</span>
+                        Knowledge Database
+                        <small>2.8 TB</small>
+                    </div>
+
+                    <div>
+                        <span>◈</span>
+                        Visual Memory
+                        <small>1.7 TB</small>
+                    </div>
+
+                    <div>
+                        <span>◈</span>
+                        Recent Events
+                        <small>1.5 TB</small>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- =====================
+                 THOUGHTS
+            ====================== -->
+
+            <div
+                class="page"
+                id="thoughts"
+            >
+
+                <div class="page-header">
+
+                    <div>
+
+                        <p class="eyebrow">
+                            COGNITIVE PROCESSOR
+                        </p>
+
+                        <h2>
+                            Thought <span>stream.</span>
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <div
+                    class="thought-board"
+                    id="thoughtBoard"
+                >
+
+                    <div class="thought-node">
+                        <small>14:42:11</small>
+                        <strong>
+                            Pattern recognition
+                        </strong>
+                        <p>
+                            Neural network detected
+                            a recurring visual pattern.
+                        </p>
+                    </div>
+
+                    <div class="thought-node purple-node">
+                        <small>14:42:07</small>
+                        <strong>
+                            Memory retrieval
+                        </strong>
+                        <p>
+                            Long-term memory cluster
+                            successfully synchronized.
+                        </p>
+                    </div>
+
+                    <div class="thought-node green-node">
+                        <small>14:42:03</small>
+                        <strong>
+                            Optimization
+                        </strong>
+                        <p>
+                            Cognitive pathways optimized
+                            for faster processing.
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- =====================
+                 AI
+            ====================== -->
+
+            <div
+                class="page"
+                id="ai"
+            >
+
+                <div class="page-header">
+
+                    <div>
+
+                        <p class="eyebrow">
+                            ARTIFICIAL INTELLIGENCE
+                        </p>
+
+                        <h2>
+                            AI <span>Core.</span>
+                        </h2>
+
+                    </div>
+
+                    <div class="ai-status">
+                        ● ONLINE
+                    </div>
+
+                </div>
+
+
+                <div class="ai-layout">
+
+                    <div class="ai-avatar">
+
+                        <div class="ai-ring">
+                            ◇
+                        </div>
+
+                        <strong>
+                            N-01
+                        </strong>
+
+                        <small>
+                            NEURAL ASSISTANT
+                        </small>
+
+                    </div>
+
+
+                    <div class="chat">
+
+                        <div
+                            class="messages"
+                            id="messages"
+                        >
+
+                            <div class="ai-message">
+
+                                <span>AI</span>
+
+                                Neural Core online.
+                                How can I assist you?
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="chat-input">
+
+                            <input
+                                id="aiInput"
+                                placeholder="Talk to Neural AI..."
+                                onkeydown="aiEnter(event)"
+                            >
+
+                            <button
+                                onclick="sendAI()"
+                            >
+                                SEND
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- =====================
+                 TERMINAL
+            ====================== -->
+
+            <div
+                class="page"
+                id="terminal"
+            >
+
+                <div class="page-header">
+
+                    <div>
+
+                        <p class="eyebrow">
+                            SYSTEM TERMINAL
+                        </p>
+
+                        <h2>
+                            Neural <span>console.</span>
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <div class="terminal">
+
+                    <div class="terminal-head">
+
+                        <span>
+                            NEURAL://CORE
+                        </span>
+
+                        <span>
+                            SECURE
+                        </span>
+
+                    </div>
+
+
+                    <div
+                        class="terminal-output"
+                        id="terminalOutput"
+                    >
+
+                        <div>
+                            NEURAL OS TERMINAL v1.0
+                        </div>
+
+                        <div>
+                            Type <b>help</b> for commands.
+                        </div>
+
+                    </div>
+
+
+                    <div class="terminal-input">
+
+                        <span>
+                            neural@core:~$
+                        </span>
+
+                        <input
+                            id="terminalInput"
+                            autocomplete="off"
+                            onkeydown="terminalCommand(event)"
+                        >
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- NOTIFICATION -->
+
+        <div
+            id="notification"
+            class="notification"
+        >
+
+            <strong>
+                NEURAL OS
+            </strong>
+
+            <p>
+                System initialized.
+            </p>
+
+        </div>
+
+    </main>
+
+
+    <script src="java.js"></script>
+
+</body>
+</html>
